@@ -1,0 +1,225 @@
+<title>은목교회 탐방 간식봉투</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Gowun+Dodum&display=swap">
+<style>
+  /* 배치: 왼쪽 큰 봉투 그림 + 오른쪽 담는 순서, 아래에 조별 스티커와 말씀 카드 */
+  :root {
+    --bg: #f6f3ee;
+    --paper: #fffdf9;
+    --ink: #3b3328;
+    --muted: #7b7062;
+    --line: #e2d9cc;
+    --accent: #8a5a2b;
+    --bag: rgba(220, 235, 245, .35);
+    --bag-edge: #9fb7c8;
+    --display: "Gowun Batang", "Nanum Myeongjo", serif;
+    --body: "Gowun Dodum", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #1f1c18; --paper: #2a2621; --ink: #f1e9dc; --muted: #b5a995;
+      --line: #3d372f; --accent: #d9a46c; --bag: rgba(200, 225, 245, .12); --bag-edge: #7d97ab;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #1f1c18; --paper: #2a2621; --ink: #f1e9dc; --muted: #b5a995;
+    --line: #3d372f; --accent: #d9a46c; --bag: rgba(200, 225, 245, .12); --bag-edge: #7d97ab;
+    color-scheme: dark;
+  }
+  body { background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 16px; line-height: 1.7; }
+  .wrap { max-width: 1000px; margin: 0 auto; padding-inline: 16px; padding-block: 32px 56px; }
+  h1, h2 { font-family: var(--display); font-weight: 700; text-wrap: balance; margin: 0; }
+  h1 { font-size: clamp(26px, 5vw, 38px); line-height: 1.3; }
+  h2 { font-size: 22px; }
+  .eyebrow { color: var(--accent); font-size: 14px; letter-spacing: .08em; }
+  .lead { color: var(--muted); margin: 8px 0 0; max-width: 60ch; }
+  section { margin-top: 48px; display: grid; gap: 16px; }
+
+  .hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px; align-items: start; margin-top: 28px; }
+  @media (max-width: 720px) { .hero { grid-template-columns: 1fr; } }
+  .bag-box { background: var(--paper); border: 1px solid var(--line); border-radius: 16px; padding: 16px; }
+  .bag-box svg { width: 100%; height: auto; display: block; }
+  .size { text-align: center; color: var(--muted); font-size: 14px; }
+
+  ol.steps { margin: 0; padding: 0; list-style: none; display: grid; gap: 14px; counter-reset: s; }
+  ol.steps li { counter-increment: s; display: grid; grid-template-columns: 32px minmax(0, 1fr); gap: 12px; }
+  ol.steps li::before { content: counter(s); font-family: var(--display); font-weight: 700; font-size: 18px;
+    width: 32px; height: 32px; border-radius: 50%; border: 1.5px solid var(--accent); color: var(--accent);
+    display: grid; place-items: center; }
+  ol.steps b { display: block; }
+  ol.steps span { color: var(--muted); font-size: 15px; }
+  .tip { border-top: 1px dashed var(--line); padding-top: 14px; color: var(--muted); font-size: 15px; }
+
+  .groups { display: grid; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 16px; }
+  .sticker-btn { background: none; border: 2px solid transparent; border-radius: 16px; padding: 8px; cursor: pointer;
+    font: inherit; color: var(--ink); display: grid; gap: 4px; justify-items: center; }
+  .sticker-btn:hover { border-color: var(--line); }
+  .sticker-btn[aria-pressed="true"] { border-color: var(--accent); }
+  .sticker-btn:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+  .sticker-btn svg { width: 100%; max-width: 120px; height: auto; }
+  .ride { font-size: 13px; color: var(--muted); }
+  .note { font-size: 14px; color: var(--muted); margin: 0; }
+
+  .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+  .vcard { aspect-ratio: 9 / 5; max-width: 100%; background: #fffaf0; color: #3b3328; border: 1px solid #e6dcc8;
+    border-radius: 6px; padding: 14px 18px; display: grid; grid-template-rows: auto 1fr auto; box-shadow: 0 2px 6px rgba(0,0,0,.06); }
+  .vcard .top { font-size: 11px; letter-spacing: .1em; color: #8a5a2b; }
+  .vcard p { margin: 0; align-self: center; font-family: var(--display); font-size: 14px; line-height: 1.6; }
+  .vcard .ref { text-align: right; font-size: 12px; color: #7b7062; }
+  @media (prefers-reduced-motion: no-preference) { .sticker-btn { transition: border-color .2s; } }
+</style>
+
+<div class="wrap">
+  <div class="eyebrow">은목교회 기독교역사탐방 · 믿음의 발자취를 따라</div>
+  <h1>탐방 간식봉투 완성 모습</h1>
+  <p class="lead">투명 봉투에 간식 5가지를 담고, 맨 앞에 말씀 카드를 넣은 뒤 입구를 접어 조 색깔 스티커로 붙인 모습이에요. 아래 스티커를 누르면 봉투 스티커 색이 바뀌어요.</p>
+
+  <div class="hero">
+    <div class="bag-box">
+      <svg viewBox="0 0 400 620" role="img" aria-label="간식봉투 완성 그림">
+        <!-- 봉투 몸통 -->
+        <rect x="40" y="70" width="320" height="520" rx="10" fill="var(--bag)" stroke="var(--bag-edge)" stroke-width="3"/>
+        <!-- 카스텔라 (뒤쪽, 크고 납작) -->
+        <g>
+          <rect x="85" y="150" width="230" height="150" rx="10" fill="#f6d27a"/>
+          <rect x="85" y="150" width="230" height="34" rx="10" fill="#a8652b"/>
+          <rect x="85" y="170" width="230" height="14" fill="#a8652b"/>
+          <text x="200" y="250" text-anchor="middle" font-family="Gowun Dodum, sans-serif" font-size="20" fill="#7a4a1c">카스텔라</text>
+        </g>
+        <!-- 생수 (왼쪽에 세움) -->
+        <g>
+          <rect x="62" y="210" width="62" height="300" rx="18" fill="#cfe9fb" stroke="#7fb3d6" stroke-width="2"/>
+          <rect x="78" y="186" width="30" height="28" rx="5" fill="#3d8fd1"/>
+          <rect x="62" y="300" width="62" height="70" fill="#3d8fd1"/>
+          <text x="93" y="342" text-anchor="middle" font-family="Gowun Dodum, sans-serif" font-size="16" fill="#fff">생수</text>
+        </g>
+        <!-- 양갱 (오른쪽에 세움) -->
+        <g>
+          <rect x="290" y="250" width="50" height="230" rx="6" fill="#6b2d2a"/>
+          <rect x="290" y="330" width="50" height="60" fill="#d9b25c"/>
+          <text x="315" y="366" text-anchor="middle" font-family="Gowun Dodum, sans-serif" font-size="15" fill="#4a1f1c">양갱</text>
+        </g>
+        <!-- 젤리 (가운데) -->
+        <g>
+          <path d="M140 310 h120 l-8 120 h-104 z" fill="#ff9db1"/>
+          <circle cx="172" cy="360" r="12" fill="#ffd36e"/>
+          <circle cx="200" cy="378" r="12" fill="#8fd6b4"/>
+          <circle cx="228" cy="358" r="12" fill="#b8a6e8"/>
+          <text x="200" y="335" text-anchor="middle" font-family="Gowun Dodum, sans-serif" font-size="16" fill="#fff">젤리</text>
+        </g>
+        <!-- 바나나 -->
+        <path transform="translate(0 -45)" d="M130 455 C170 495 240 495 282 448 C276 476 236 512 190 508 C158 505 138 482 130 455 Z" fill="#f4d03f" stroke="#c9a215" stroke-width="2"/>
+        <circle cx="282" cy="403" r="5" fill="#5b4a1c"/>
+        <!-- 말씀 카드 (맨 앞) -->
+        <g>
+          <rect x="95" y="470" width="210" height="110" rx="6" fill="#fffaf0" stroke="#e6dcc8" stroke-width="2"/>
+          <text x="200" y="500" text-anchor="middle" font-family="Gowun Dodum, sans-serif" font-size="11" fill="#8a5a2b">믿음의 발자취를 따라</text>
+          <text x="200" y="530" text-anchor="middle" font-family="Gowun Batang, serif" font-size="14" fill="#3b3328">여호와께서 너의 출입을</text>
+          <text x="200" y="550" text-anchor="middle" font-family="Gowun Batang, serif" font-size="14" fill="#3b3328">지금부터 영원까지 지키시리로다</text>
+          <text x="290" y="570" text-anchor="end" font-family="Gowun Dodum, sans-serif" font-size="10" fill="#7b7062">시편 121:8</text>
+        </g>
+        <!-- 봉투 반짝임 -->
+        <path d="M60 90 L60 560" stroke="rgba(255,255,255,.55)" stroke-width="6" stroke-linecap="round"/>
+        <!-- 접힌 입구 -->
+        <rect x="40" y="40" width="320" height="56" rx="8" fill="var(--bag)" stroke="var(--bag-edge)" stroke-width="3"/>
+        <line x1="44" y1="96" x2="356" y2="96" stroke="var(--bag-edge)" stroke-width="2" stroke-dasharray="6 5"/>
+        <!-- 조 스티커 -->
+        <g id="bagSticker" transform="translate(200 82)"></g>
+      </svg>
+      <div class="size">투명 OPP 봉투 20 × 30 cm · 스티커 지름 6 cm</div>
+    </div>
+
+    <div style="display:grid;gap:18px;min-width:0">
+      <h2>담는 순서</h2>
+      <ol class="steps">
+        <li><div><b>카스텔라</b><span>크고 납작해서 맨 먼저 봉투 뒤쪽에 넣어요.</span></div></li>
+        <li><div><b>생수 · 양갱</b><span>세울 수 있는 것들을 양옆에 세워요.</span></div></li>
+        <li><div><b>젤리 · 바나나</b><span>가운데 빈자리를 채워요. 바나나는 눌리면 검게 변하니 당일 아침에 넣어요.</span></div></li>
+        <li><div><b>말씀 카드</b><span>명함 크기(9 × 5 cm) 카드를 맨 앞에 넣어 밖에서 글씨가 보이게 해요.</span></div></li>
+        <li><div><b>입구 접고 스티커</b><span>입구를 한 번 접고 조 색깔 스티커로 붙이면 끝이에요.</span></div></li>
+      </ol>
+      <div class="tip">1~4조는 버스, 5~7조는 스타리아에 타요. 스티커 색으로 바로 구분되니 차량 박스에 나눠 담을 때 헷갈리지 않아요.</div>
+    </div>
+  </div>
+
+  <section>
+    <h2>조별 스티커 7종</h2>
+    <p class="note">바탕색과 가운데 조 이름만 바꿔서 주문하면 돼요. 누르면 위 봉투 그림에 붙여 볼 수 있어요.</p>
+    <div class="groups" id="groups"></div>
+  </section>
+
+  <section>
+    <h2>말씀 카드</h2>
+    <p class="note">인쇄 전에 쓰시는 성경 번역본과 본문을 한 번 더 맞춰 보세요.</p>
+    <div class="cards">
+      <div class="vcard">
+        <div class="top">은목교회 기독교역사탐방</div>
+        <p>이러므로 우리에게 구름 같이 둘러싼 허다한 증인들이 있으니 … 인내로써 우리 앞에 당한 경주를 경주하며</p>
+        <div class="ref">히브리서 12:1</div>
+      </div>
+      <div class="vcard">
+        <div class="top">은목교회 기독교역사탐방</div>
+        <p>옛날을 기억하라 역대의 연대를 생각하라 네 아비에게 물으라 그가 네게 설명할 것이요</p>
+        <div class="ref">신명기 32:7</div>
+      </div>
+      <div class="vcard">
+        <div class="top">은목교회 기독교역사탐방</div>
+        <p>여호와께서 너의 출입을 지금부터 영원까지 지키시리로다</p>
+        <div class="ref">시편 121:8</div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script>
+  var GROUPS = [
+    { n: 1, c: "#e5767c", ride: "버스" },
+    { n: 2, c: "#ee9d4f", ride: "버스" },
+    { n: 3, c: "#e2bd3f", ride: "버스" },
+    { n: 4, c: "#5fae82", ride: "버스" },
+    { n: 5, c: "#4f9fd6", ride: "스타리아" },
+    { n: 6, c: "#5867bd", ride: "스타리아" },
+    { n: 7, c: "#9a78c6", ride: "스타리아" }
+  ];
+
+  // 지름 6cm 원형 스티커: 바깥 글씨 + 가운데 조 이름
+  function sticker(g, r, id) {
+    var top = "은목교회 기독교역사탐방", bottom = "믿음의 발자취를 따라";
+    var tr = r * 0.76;
+    return '' +
+      '<defs>' +
+        '<path id="t' + id + '" d="M ' + (-tr) + ' 0 A ' + tr + ' ' + tr + ' 0 0 1 ' + tr + ' 0"/>' +
+        '<path id="b' + id + '" d="M ' + (-tr - r*0.1) + ' 0 A ' + (tr + r*0.1) + ' ' + (tr + r*0.1) + ' 0 0 0 ' + (tr + r*0.1) + ' 0"/>' +
+      '</defs>' +
+      '<circle r="' + r + '" fill="' + g.c + '"/>' +
+      '<circle r="' + (r * 0.93) + '" fill="none" stroke="#fff" stroke-width="' + (r * 0.025) + '"/>' +
+      '<circle r="' + (r * 0.55) + '" fill="#fff"/>' +
+      '<text font-family="Gowun Dodum, sans-serif" font-size="' + (r * 0.13) + '" fill="#fff" letter-spacing="' + (r*0.01) + '">' +
+        '<textPath href="#t' + id + '" startOffset="50%" text-anchor="middle">' + top + '</textPath></text>' +
+      '<text font-family="Gowun Dodum, sans-serif" font-size="' + (r * 0.115) + '" fill="#fff">' +
+        '<textPath href="#b' + id + '" startOffset="50%" text-anchor="middle">' + bottom + '</textPath></text>' +
+      '<text y="' + (r * 0.17) + '" text-anchor="middle" font-family="Gowun Batang, serif" font-weight="700" font-size="' + (r * 0.42) + '" fill="' + g.c + '">' + g.n + '조</text>';
+  }
+
+  var bag = document.getElementById("bagSticker");
+  function putOnBag(i) {
+    bag.innerHTML = sticker(GROUPS[i], 62, "bag");
+    var btns = document.querySelectorAll(".sticker-btn");
+    for (var k = 0; k < btns.length; k++) btns[k].setAttribute("aria-pressed", k === i ? "true" : "false");
+  }
+
+  var box = document.getElementById("groups");
+  GROUPS.forEach(function (g, i) {
+    var b = document.createElement("button");
+    b.type = "button";
+    b.className = "sticker-btn";
+    b.id = "group-" + g.n;
+    b.innerHTML = '<svg viewBox="-60 -60 120 120" aria-hidden="true">' + sticker(g, 58, "g" + g.n) + '</svg>' +
+      '<span>' + g.n + '조</span><span class="ride">' + g.ride + '</span>';
+    b.addEventListener("click", function () { putOnBag(i); });
+    box.appendChild(b);
+  });
+  putOnBag(0);
+</script>
